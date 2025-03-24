@@ -7,6 +7,12 @@ const doc = {
     version: "1.0.0",
     description: 'Users API'
   },
+  tags: [
+    {
+      name: 'API',
+      description: 'API endpoints'
+    }
+  ],
   host: 'localhost:3000',
   basePath: "/api/users"
 };
