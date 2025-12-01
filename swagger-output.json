@@ -7,13 +7,11 @@
   },
   "host": "localhost:3000",
   "basePath": "/api/users",
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["http"],
   "paths": {
     "/": {
       "get": {
-        "description": "",
+        "description": "Returns all users data",
         "responses": {
           "200": {
             "description": "OK"
@@ -21,7 +19,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Creates a new user",
         "parameters": [
           {
             "name": "body",
@@ -30,10 +28,10 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "example": "Sample Name"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "sample@email.com"
                 }
               }
             }
@@ -48,7 +46,7 @@
     },
     "/{id}": {
       "get": {
-        "description": "",
+        "description": "Returns a user data by id",
         "parameters": [
           {
             "name": "id",
@@ -67,7 +65,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Updates user's data",
         "parameters": [
           {
             "name": "id",
@@ -82,10 +80,10 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "example": "New User Name"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "new.user@email.com"
                 }
               }
             }
@@ -101,7 +99,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Deletes a user by id",
         "parameters": [
           {
             "name": "id",
