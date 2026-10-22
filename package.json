@@ -14,12 +14,13 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "better-sqlite3": "^12.5.0",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.6",
     "express": "^5.1.0",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11",
+    "nodemon": "^1.14.10",
     "swagger-autogen": "^2.23.7"
   }
 }
