@@ -1,10 +1,12 @@
 import express from "express";
 import cors from "cors";
 import usersRouter from "./routes/users.js";
-import swaggerUi from 'swagger-ui-express';
+import swaggerUi from "swagger-ui-express";
 // const swaggerDocument = await import("./swagger-output.json", { assert: { type: "json" } });
 import { readFile } from "fs/promises";
-const swaggerDocument = JSON.parse(await readFile(new URL("./swagger-docs.json", import.meta.url)));
+const swaggerDocument = JSON.parse(
+  await readFile(new URL("./swagger-docs.json", import.meta.url)),
+);
 
 const app = express();
 app.use(cors());
@@ -14,8 +16,11 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/api/users", usersRouter);
 
 app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(err.status || 500).json({ error: err });
+  console.error(err);
+
+  res.status(err.status || 500).json({
+    message: err.message || "Internal Server Error",
+  });
 });
 
 app.listen(3000, () => console.log("Server is running on port 3000"));
